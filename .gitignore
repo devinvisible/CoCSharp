@@ -15,3 +15,5 @@ packages/
 *.swp
 *.swn
 *.swm
+
+*.DotSettings.user
