@@ -1,6 +1,7 @@
 ﻿using CoCSharp.Network;
 using System;
 using System.IO;
+using System.Linq;
 using System.Net.Sockets;
 
 namespace CoCSharp
@@ -55,6 +56,14 @@ namespace CoCSharp
             for (int i = 0; i < bytes.Length; i++)
                 str += bytes[i].ToString("x2");
             return str;
+        }
+
+        public static byte[] StringToBytes(string hex)
+        {
+            return Enumerable.Range(0, hex.Length)
+                             .Where(x => x % 2 == 0)
+                             .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
+                             .ToArray();
         }
     }
 }
