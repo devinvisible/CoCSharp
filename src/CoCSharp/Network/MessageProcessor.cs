@@ -14,21 +14,21 @@ namespace CoCSharp.Network
         public abstract CoCCrypto Crypto { get; }
 
         /// <summary>
-        /// Processes the specified chippered array of bytes and returns
+        /// Processes the specified ciphered array of bytes and returns
         /// the resulting <see cref="Message"/>.
         /// </summary>
         /// <param name="header">Header of the message.</param>
-        /// <param name="chiper">Ciphered array of bytes representing a message to process.</param>
-        /// <param name="plaintext">Plaintext representation of <paramref name="chiper"/>.</param>
+        /// <param name="cipher">Ciphered array of bytes representing a message to process.</param>
+        /// <param name="plaintext">Plaintext representation of <paramref name="cipher"/>.</param>
         /// <returns>Resulting <see cref="Message"/>.</returns>
-        public abstract Message ProcessIncoming(MessageHeader header, byte[] chiper, ref byte[] plaintext);
+        public abstract Message ProcessIncoming(MessageHeader header, byte[] cipher, ref byte[] plaintext);
 
         /// <summary>
         /// Processes the specified <see cref="Message"/> and returns
-        /// the resulting chippered array of bytes.
+        /// the resulting ciphered array of bytes.
         /// </summary>
         /// <param name="message"><see cref="Message"/> to process.</param>
-        /// <returns>Resulting chippered array of bytes.</returns>
+        /// <returns>Resulting ciphered array of bytes.</returns>
         public abstract byte[] ProcessOutgoing(Message message);
     }
 }
